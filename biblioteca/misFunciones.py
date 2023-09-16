@@ -4,8 +4,10 @@ def filtrar_dataframe(dataframe, columna, frase):
 
 
 def Estado_Rest(data,estado):
+    import pandas as pd
+    import seaborn as sns
     df=data[data['Estado'] == estado]
-    df=pd.DataFrame(df)
+    df=pa.DataFrame(df)
     df=sns.countplot(y='category', data=df, order=df['category'].value_counts().head(5).index)
     return df
 
