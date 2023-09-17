@@ -11,6 +11,11 @@ data_comple=data_comple[["Estado","latitude","longitude","category","name"]]
 
 data_comple.dropna(subset=["category"], inplace=True)
 
+st.markdown("***")
+
+st.markdown("# 	:zap: Restaurant Sectorizado  :zap:")
+st.markdown("***")
+
 
 lista=data_comple["Estado"].unique()
 select=st.selectbox("Seleccione Estado: ",lista)
@@ -36,10 +41,15 @@ mapa = folium.Map(location=[sum(latitudes)/len(latitudes), sum(longitudes)/len(l
 # Agregar marcadores al mapa
 for lat, lon in zip(latitudes, longitudes):
     folium.Marker([lat, lon]).add_to(mapa)
-
+        
 
 # Mostrar el mapa
-st_data = st_folium(mapa,width=300,height=300)
+st_data = st_folium(mapa,returned_objects=[])
+
+st.markdown("***")
+
+st.markdown("# 	:zap:  Categorizacion de Restaurant  :zap:")
+st.markdown("***")
 
 
 
@@ -67,11 +77,21 @@ for lat, lon in zip(latitudes, longitudes):
 
 
 # Mostrar el mapa
-st_data = st_folium(mapa, width=300,height=300)
+st_data = st_folium(mapa,returned_objects=[])
+
+st.markdown("***")
+
+st.markdown("# 	:zap: Franquicias del sector   :zap:")
+st.markdown("***")
+
+
+Franquicias=pd.DataFrame(df['name'].value_counts().head(10).reset_index())
 
 
 
-
-
+#sns.barplot(y='category', x='count', data=conteo)
+st.dataframe(Franquicias)
+sns.barplot(y='name', x='count', data=Franquicias)
+st.pyplot()
 
 
