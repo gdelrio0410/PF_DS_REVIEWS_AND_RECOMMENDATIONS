@@ -40,18 +40,22 @@ Se realizó un análisis preliminar y transformaciones de los conjuntos de datos
 ## KPI
 
 - Tasa de Satisfacción del Cliente
+
 Este KPI mide el porcentaje de clientes satisfechos en función de las reseñas y opiniones recopiladas en plataformas como Yelp y Google Maps.
 Tasa de Satisfacción del Cliente = (Número de Reseñas Positivas / Total de Reseñas) x 100
 
 - Rentabilidad por Ubicación
+
 Permite identificar cuáles son las ubicaciones más rentables y cuáles pueden requerir mejoras.
 Rentabilidad por Ubicación = (Ingresos - Costos) / Ingresos x 100
 
 - Porcentaje de Restaurantes con Alta Calificación
+
 Este KPI muestra el porcentaje de restaurantes que tienen una calificación por encima de un umbral específico (por ejemplo, 4 estrellas).
 Porcentaje de Restaurantes con Alta Calificación = (Número de Restaurantes con Rating >= Umbral) / Total de Restaurantes x 100
 
 - Diferencia Promedio de Rating por Estado
+
 identificar si la calidad de los restaurantes varía significativamente de un estado a otro.
 Diferencia Promedio de Rating por Estado = Promedio de "Rating" agrupado por "Estado".
 
