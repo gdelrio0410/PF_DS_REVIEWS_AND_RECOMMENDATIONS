@@ -77,7 +77,8 @@ Para llevar a cabo nuestro proyecto hemos seleccionado las siguientes tecnologí
 - Ingeniería de datos: Python, MySQL, Docker, [Apache Airflow](https://airflow.apache.org).
 - Análisis y visualización de datos: [Power BI](https://powerbi.microsoft.com), Python.
 - Modelo de machine learning: Python.
-- Gestión de proyectos: [Jira](https://www.atlassian.com/software/jira).
+- Gestión de proyectos: [Trello](https://trello.com).
+
 
 
 ## Data Pipeline 📊
