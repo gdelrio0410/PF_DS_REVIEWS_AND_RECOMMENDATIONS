@@ -73,11 +73,12 @@ En este proyecto, estamos empleando la metodología ágil mediante el marco de t
 
 Para llevar a cabo nuestro proyecto hemos seleccionado las siguientes tecnologías:
 
-- Trabajo diario: Python, Google Meet, GitHub.
-- Ingeniería de datos: Python, MySQL, Docker, Apache Airflow.
-- Análisis y visualización de datos: Power BI, Python.
+- Trabajo diario: Python, Google Meet, [GitHub](https://github.com).
+- Ingeniería de datos: Python, MySQL, Docker, [Apache Airflow](https://airflow.apache.org).
+- Análisis y visualización de datos: [Power BI](https://powerbi.microsoft.com), Python.
 - Modelo de machine learning: Python.
-- Gestión de proyectos: Jira
+- Gestión de proyectos: [Jira](https://www.atlassian.com/software/jira).
+
 
 ## Data Pipeline 📊
 
