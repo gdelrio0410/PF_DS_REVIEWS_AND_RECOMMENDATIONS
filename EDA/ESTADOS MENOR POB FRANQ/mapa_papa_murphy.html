@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_0e6275be6f0bacae706d33a0a77c0f61 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_0e6275be6f0bacae706d33a0a77c0f61" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_0e6275be6f0bacae706d33a0a77c0f61 = L.map(
+                "map_0e6275be6f0bacae706d33a0a77c0f61",
+                {
+                    center: [39.833851, -98.58533],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 4,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_6ebea50c01e386fce84e5143c5b60bc2 = L.tileLayer(
+                "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "Data by \u0026copy; \u003ca target=\"_blank\" href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_0e6275be6f0bacae706d33a0a77c0f61);
+        
+    
+            var marker_55fd7fea9307b9ce971c87161c0d809c = L.marker(
+                [36.239999999999995, -96.42],
+                {}
+            ).addTo(map_0e6275be6f0bacae706d33a0a77c0f61);
+        
+    
+            var div_icon_01b3c23d59d1ff917b4b20d3c49b61ac = L.divIcon({"className": "empty", "html": "\u003cdiv\u003eCantidad de Sucursales: 24\u003c/div\u003e"});
+            marker_55fd7fea9307b9ce971c87161c0d809c.setIcon(div_icon_01b3c23d59d1ff917b4b20d3c49b61ac);
+        
+    
+            var marker_78b5cab29bd70a7d20e461e72b45129f = L.marker(
+                [61.1106544, -149.8544024],
+                {}
+            ).addTo(map_0e6275be6f0bacae706d33a0a77c0f61);
+        
+    
+            var icon_9fd0c13a4128a1ede6e0c4c3c9acea3d = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_78b5cab29bd70a7d20e461e72b45129f.setIcon(icon_9fd0c13a4128a1ede6e0c4c3c9acea3d);
+        
+    
+            marker_78b5cab29bd70a7d20e461e72b45129f.bindTooltip(
+                `<div>
+                     Papa Murphy's | Take 'N' Bake Pizza<br>Latitud: 61.1106544<br>Longitud: -149.8544024
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_70e3d9b087725e6d2e8765320d12ff69 = L.marker(
+                [61.1106544, -149.8544024],
+                {}
+            ).addTo(map_0e6275be6f0bacae706d33a0a77c0f61);
+        
+    
+            var icon_6fad020a376d5e633447d58101bb6394 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_70e3d9b087725e6d2e8765320d12ff69.setIcon(icon_6fad020a376d5e633447d58101bb6394);
+        
+    
+            marker_70e3d9b087725e6d2e8765320d12ff69.bindTooltip(
+                `<div>
+                     Papa Murphy's | Take 'N' Bake Pizza<br>Latitud: 61.1106544<br>Longitud: -149.8544024
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_ee4a5b669967e50561d4cbfadb1d98bf = L.marker(
+                [61.1106544, -149.8544024],
+                {}
+            ).addTo(map_0e6275be6f0bacae706d33a0a77c0f61);
+        
+    
+            var icon_334e5213f427b1bceb184007ac4ab8ee = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_ee4a5b669967e50561d4cbfadb1d98bf.setIcon(icon_334e5213f427b1bceb184007ac4ab8ee);
+        
+    
+            marker_ee4a5b669967e50561d4cbfadb1d98bf.bindTooltip(
+                `<div>
+                     Papa Murphy's | Take 'N' Bake Pizza<br>Latitud: 61.1106544<br>Longitud: -149.8544024
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_5de93a25c36059ed33eb9ff34f018580 = L.marker(
+                [61.1106544, -149.8544024],
+                {}
+            ).addTo(map_0e6275be6f0bacae706d33a0a77c0f61);
+        
+    
+            var icon_4f9d02bbfdd09755749dfba2d0232062 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_5de93a25c36059ed33eb9ff34f018580.setIcon(icon_4f9d02bbfdd09755749dfba2d0232062);
+        
+    
+            marker_5de93a25c36059ed33eb9ff34f018580.bindTooltip(
+                `<div>
+                     Papa Murphy's | Take 'N' Bake Pizza<br>Latitud: 61.1106544<br>Longitud: -149.8544024
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_5572c2656432a70da065ba5ba4a5f920 = L.marker(
+                [61.3406964, -149.5560071],
+                {}
+            ).addTo(map_0e6275be6f0bacae706d33a0a77c0f61);
+        
+    
+            var icon_d41fe7ae4e0931ddc94adb078159a9a0 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_5572c2656432a70da065ba5ba4a5f920.setIcon(icon_d41fe7ae4e0931ddc94adb078159a9a0);
+        
+    
+            marker_5572c2656432a70da065ba5ba4a5f920.bindTooltip(
+                `<div>
+                     Papa Murphy's | Take 'N' Bake Pizza<br>Latitud: 61.3406964<br>Longitud: -149.5560071
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_2d36c8d2e6230a2ea58150b1cb4a91d0 = L.marker(
+                [61.3406964, -149.5560071],
+                {}
+            ).addTo(map_0e6275be6f0bacae706d33a0a77c0f61);
+        
+    
+            var icon_501fc9b8374e68791cbe09f7c2ef38d0 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_2d36c8d2e6230a2ea58150b1cb4a91d0.setIcon(icon_501fc9b8374e68791cbe09f7c2ef38d0);
+        
+    
+            marker_2d36c8d2e6230a2ea58150b1cb4a91d0.bindTooltip(
+                `<div>
+                     Papa Murphy's | Take 'N' Bake Pizza<br>Latitud: 61.3406964<br>Longitud: -149.5560071
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_26e7b91dab6c03edcda899cd19532d40 = L.marker(
+                [61.3406964, -149.5560071],
+                {}
+            ).addTo(map_0e6275be6f0bacae706d33a0a77c0f61);
+        
+    
+            var icon_55cbad6df52b89a95984be725f96923b = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_26e7b91dab6c03edcda899cd19532d40.setIcon(icon_55cbad6df52b89a95984be725f96923b);
+        
+    
+            marker_26e7b91dab6c03edcda899cd19532d40.bindTooltip(
+                `<div>
+                     Papa Murphy's | Take 'N' Bake Pizza<br>Latitud: 61.3406964<br>Longitud: -149.5560071
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_de473c77ffa64a5e29dce3da856430a3 = L.marker(
+                [61.3406964, -149.5560071],
+                {}
+            ).addTo(map_0e6275be6f0bacae706d33a0a77c0f61);
+        
+    
+            var icon_e6c595cc801832ee87a0bf9d29b58701 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_de473c77ffa64a5e29dce3da856430a3.setIcon(icon_e6c595cc801832ee87a0bf9d29b58701);
+        
+    
+            marker_de473c77ffa64a5e29dce3da856430a3.bindTooltip(
+                `<div>
+                     Papa Murphy's | Take 'N' Bake Pizza<br>Latitud: 61.3406964<br>Longitud: -149.5560071
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_f0fa5931baca61528ff260c694d6d6c7 = L.marker(
+                [61.5790185, -149.4084484],
+                {}
+            ).addTo(map_0e6275be6f0bacae706d33a0a77c0f61);
+        
+    
+            var icon_974abae26c0b2e53fe14126d5d292b6c = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_f0fa5931baca61528ff260c694d6d6c7.setIcon(icon_974abae26c0b2e53fe14126d5d292b6c);
+        
+    
+            marker_f0fa5931baca61528ff260c694d6d6c7.bindTooltip(
+                `<div>
+                     Papa Murphy's | Take 'N' Bake Pizza<br>Latitud: 61.5790185<br>Longitud: -149.4084484
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_88f63a62fa1d17db5759387b3a25c00c = L.marker(
+                [61.5790185, -149.4084484],
+                {}
+            ).addTo(map_0e6275be6f0bacae706d33a0a77c0f61);
+        
+    
+            var icon_4eaba2444ba4ddeea0ecad4c8c1df5fc = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_88f63a62fa1d17db5759387b3a25c00c.setIcon(icon_4eaba2444ba4ddeea0ecad4c8c1df5fc);
+        
+    
+            marker_88f63a62fa1d17db5759387b3a25c00c.bindTooltip(
+                `<div>
+                     Papa Murphy's | Take 'N' Bake Pizza<br>Latitud: 61.5790185<br>Longitud: -149.4084484
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_f9399919e95d4f8f16fd28dc98dd29a2 = L.marker(
+                [61.5790185, -149.4084484],
+                {}
+            ).addTo(map_0e6275be6f0bacae706d33a0a77c0f61);
+        
+    
+            var icon_9d94313f27e876935c73839b1c39b549 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_f9399919e95d4f8f16fd28dc98dd29a2.setIcon(icon_9d94313f27e876935c73839b1c39b549);
+        
+    
+            marker_f9399919e95d4f8f16fd28dc98dd29a2.bindTooltip(
+                `<div>
+                     Papa Murphy's | Take 'N' Bake Pizza<br>Latitud: 61.5790185<br>Longitud: -149.4084484
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_5540fdd4fcedce18479341dbff843215 = L.marker(
+                [61.5790185, -149.4084484],
+                {}
+            ).addTo(map_0e6275be6f0bacae706d33a0a77c0f61);
+        
+    
+            var icon_c7c45054283712ea3b22cdfcf21eaeec = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_5540fdd4fcedce18479341dbff843215.setIcon(icon_c7c45054283712ea3b22cdfcf21eaeec);
+        
+    
+            marker_5540fdd4fcedce18479341dbff843215.bindTooltip(
+                `<div>
+                     Papa Murphy's | Take 'N' Bake Pizza<br>Latitud: 61.5790185<br>Longitud: -149.4084484
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_2504adbdc26ae533e881fd66800762d1 = L.marker(
+                [60.4807993, -151.0751018],
+                {}
+            ).addTo(map_0e6275be6f0bacae706d33a0a77c0f61);
+        
+    
+            var icon_2db07a9cb3d03bc954b7d07549974c2a = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_2504adbdc26ae533e881fd66800762d1.setIcon(icon_2db07a9cb3d03bc954b7d07549974c2a);
+        
+    
+            marker_2504adbdc26ae533e881fd66800762d1.bindTooltip(
+                `<div>
+                     Papa Murphy's | Take 'N' Bake Pizza<br>Latitud: 60.4807993<br>Longitud: -151.0751018
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_c05f2c2ef51afeffd43217bf3cfe4ff1 = L.marker(
+                [60.4807993, -151.0751018],
+                {}
+            ).addTo(map_0e6275be6f0bacae706d33a0a77c0f61);
+        
+    
+            var icon_618fceb8f45819d1185ae09639224014 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_c05f2c2ef51afeffd43217bf3cfe4ff1.setIcon(icon_618fceb8f45819d1185ae09639224014);
+        
+    
+            marker_c05f2c2ef51afeffd43217bf3cfe4ff1.bindTooltip(
+                `<div>
+                     Papa Murphy's | Take 'N' Bake Pizza<br>Latitud: 60.4807993<br>Longitud: -151.0751018
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_7345ad664e34712c579db7bc7fc83e67 = L.marker(
+                [60.4807993, -151.0751018],
+                {}
+            ).addTo(map_0e6275be6f0bacae706d33a0a77c0f61);
+        
+    
+            var icon_c58c5150b31f1f1e06d211f9dfac2d4f = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_7345ad664e34712c579db7bc7fc83e67.setIcon(icon_c58c5150b31f1f1e06d211f9dfac2d4f);
+        
+    
+            marker_7345ad664e34712c579db7bc7fc83e67.bindTooltip(
+                `<div>
+                     Papa Murphy's | Take 'N' Bake Pizza<br>Latitud: 60.4807993<br>Longitud: -151.0751018
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_a2d58edbc2478958638580ad6d7d5ba2 = L.marker(
+                [60.4807993, -151.0751018],
+                {}
+            ).addTo(map_0e6275be6f0bacae706d33a0a77c0f61);
+        
+    
+            var icon_ab091d77a6d53ef3df837f2373e9d0f5 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_a2d58edbc2478958638580ad6d7d5ba2.setIcon(icon_ab091d77a6d53ef3df837f2373e9d0f5);
+        
+    
+            marker_a2d58edbc2478958638580ad6d7d5ba2.bindTooltip(
+                `<div>
+                     Papa Murphy's | Take 'N' Bake Pizza<br>Latitud: 60.4807993<br>Longitud: -151.0751018
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_42bc64e44c7206d435859202cab86b24 = L.marker(
+                [61.5995693, -149.1158412],
+                {}
+            ).addTo(map_0e6275be6f0bacae706d33a0a77c0f61);
+        
+    
+            var icon_edf0ea9ad369be73de57e81025159fa5 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_42bc64e44c7206d435859202cab86b24.setIcon(icon_edf0ea9ad369be73de57e81025159fa5);
+        
+    
+            marker_42bc64e44c7206d435859202cab86b24.bindTooltip(
+                `<div>
+                     Papa Murphy's | Take 'N' Bake Pizza<br>Latitud: 61.5995693<br>Longitud: -149.1158412
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_66f00469f6306f89cc8dda003738d594 = L.marker(
+                [61.5995693, -149.1158412],
+                {}
+            ).addTo(map_0e6275be6f0bacae706d33a0a77c0f61);
+        
+    
+            var icon_d93f3245f710d12ccd192a81c74363dd = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_66f00469f6306f89cc8dda003738d594.setIcon(icon_d93f3245f710d12ccd192a81c74363dd);
+        
+    
+            marker_66f00469f6306f89cc8dda003738d594.bindTooltip(
+                `<div>
+                     Papa Murphy's | Take 'N' Bake Pizza<br>Latitud: 61.5995693<br>Longitud: -149.1158412
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_b29c9d5cc8d873b1045872441491483d = L.marker(
+                [61.5995693, -149.1158412],
+                {}
+            ).addTo(map_0e6275be6f0bacae706d33a0a77c0f61);
+        
+    
+            var icon_4454d03e195c47e2c2a0e7522e2ca287 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_b29c9d5cc8d873b1045872441491483d.setIcon(icon_4454d03e195c47e2c2a0e7522e2ca287);
+        
+    
+            marker_b29c9d5cc8d873b1045872441491483d.bindTooltip(
+                `<div>
+                     Papa Murphy's | Take 'N' Bake Pizza<br>Latitud: 61.5995693<br>Longitud: -149.1158412
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_02365ad133483483b557eeae093c9821 = L.marker(
+                [61.5995693, -149.1158412],
+                {}
+            ).addTo(map_0e6275be6f0bacae706d33a0a77c0f61);
+        
+    
+            var icon_311b9a6efbb6cb38f15c943fd25e69b7 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_02365ad133483483b557eeae093c9821.setIcon(icon_311b9a6efbb6cb38f15c943fd25e69b7);
+        
+    
+            marker_02365ad133483483b557eeae093c9821.bindTooltip(
+                `<div>
+                     Papa Murphy's | Take 'N' Bake Pizza<br>Latitud: 61.5995693<br>Longitud: -149.1158412
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_2354b9eaa662e3368e94c8e99074f052 = L.marker(
+                [61.136137, -149.8396665],
+                {}
+            ).addTo(map_0e6275be6f0bacae706d33a0a77c0f61);
+        
+    
+            var icon_30d63df41b9761c11eb2b5a28ab26ceb = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_2354b9eaa662e3368e94c8e99074f052.setIcon(icon_30d63df41b9761c11eb2b5a28ab26ceb);
+        
+    
+            marker_2354b9eaa662e3368e94c8e99074f052.bindTooltip(
+                `<div>
+                     Papa Murphy's | Take 'N' Bake Pizza<br>Latitud: 61.136137<br>Longitud: -149.8396665
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_fe693a6be49340c7ecc8607e75a4ca5c = L.marker(
+                [61.136137, -149.8396665],
+                {}
+            ).addTo(map_0e6275be6f0bacae706d33a0a77c0f61);
+        
+    
+            var icon_25a80b5a2be49114f385d3f228ad58c5 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_fe693a6be49340c7ecc8607e75a4ca5c.setIcon(icon_25a80b5a2be49114f385d3f228ad58c5);
+        
+    
+            marker_fe693a6be49340c7ecc8607e75a4ca5c.bindTooltip(
+                `<div>
+                     Papa Murphy's | Take 'N' Bake Pizza<br>Latitud: 61.136137<br>Longitud: -149.8396665
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_fdcefa4b49590aa18ef416c802a4c4ae = L.marker(
+                [61.136137, -149.8396665],
+                {}
+            ).addTo(map_0e6275be6f0bacae706d33a0a77c0f61);
+        
+    
+            var icon_050dd152dfafdead28900dd217a417f0 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_fdcefa4b49590aa18ef416c802a4c4ae.setIcon(icon_050dd152dfafdead28900dd217a417f0);
+        
+    
+            marker_fdcefa4b49590aa18ef416c802a4c4ae.bindTooltip(
+                `<div>
+                     Papa Murphy's | Take 'N' Bake Pizza<br>Latitud: 61.136137<br>Longitud: -149.8396665
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_16fa61464661747f07661451c47f6e73 = L.marker(
+                [61.136137, -149.8396665],
+                {}
+            ).addTo(map_0e6275be6f0bacae706d33a0a77c0f61);
+        
+    
+            var icon_c3418ec10cbd91178272cdefa6e12b6e = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_16fa61464661747f07661451c47f6e73.setIcon(icon_c3418ec10cbd91178272cdefa6e12b6e);
+        
+    
+            marker_16fa61464661747f07661451c47f6e73.bindTooltip(
+                `<div>
+                     Papa Murphy's | Take 'N' Bake Pizza<br>Latitud: 61.136137<br>Longitud: -149.8396665
+                 </div>`,
+                {"sticky": true}
+            );
+        
+</script>
+</html>
