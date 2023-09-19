@@ -50,6 +50,7 @@ Se realizó un análisis preliminar y transformaciones de los conjuntos de datos
 ### Tasa de Satisfacción del Cliente
 Este KPI mide el porcentaje de clientes satisfechos en función de las reseñas y opiniones recopiladas en plataformas como Yelp y Google Maps.
 Tasa de Satisfacción del Cliente = (Número de Reseñas Positivas / Total de Reseñas) x 100
+Considerando las Reseñas Positivas las de valor mayor a 4 estrellas.
 
 ### Rentabilidad por Ubicación
 Permite identificar cuáles son las ubicaciones más rentables y cuáles pueden requerir mejoras.
