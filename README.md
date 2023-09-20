@@ -111,4 +111,4 @@ La conexión se realiza mediante el conector de Azure SQL Database de Power BI. 
 
 ### Documentacion
 
-[Documentacion](https://drive.google.com/drive/folders/1oGDEF0Muzrz1afr3_JDoi8EbfrU0oeWn)https://drive.google.com/drive/folders/1oGDEF0Muzrz1afr3_JDoi8EbfrU0oeWn).
+[Documentacion]([https://drive.google.com/drive/folders/1oGDEF0Muzrz1afr3_JDoi8EbfrU0oeWn](https://drive.google.com/file/d/1HaEYlB13XfoRl2LpiypKTITiFe3X6-hF/view?usp=drive_link)https://drive.google.com/file/d/1HaEYlB13XfoRl2LpiypKTITiFe3X6-hF/view?usp=drive_link).
