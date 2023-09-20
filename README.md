@@ -3,8 +3,8 @@
 ## ROLES Y RESPONSABILIDADES: 👨‍💼👨‍💼👨‍💼👨‍💼👨‍💼
 
 - Víctor Vargas ➡️ Data Engineer
-- Guillermo del Río ➡️ Data Science
 - Michael Martínez ➡️ Data Engineer
+- Guillermo del Río ➡️ Data Science
 - Julián Scarpeccio ➡️ Data Science
 - Benjamín Zelaya ➡️ Data Analyst
 
@@ -52,17 +52,16 @@ Este KPI mide el porcentaje de clientes satisfechos en función de las reseñas 
 Tasa de Satisfacción del Cliente = (Número de Reseñas Positivas / Total de Reseñas) x 100
 Considerando las Reseñas Positivas las de valor mayor a 4 estrellas.
 
-### Rentabilidad por Ubicación
-Permite identificar cuáles son las ubicaciones más rentables y cuáles pueden requerir mejoras.
-Rentabilidad por Ubicación = (Ingresos - Costos) / Ingresos x 100
+### Cantidad de Sucursales por Conglomerado de Estados
+Permite identificar cuantas sucursales tendremos por conglomerado de estados.
+
 
 ### Porcentaje de Restaurantes con Alta Calificación
 Este KPI muestra el porcentaje de restaurantes que tienen una calificación por encima de un umbral específico (por ejemplo, 4 estrellas).
 Porcentaje de Restaurantes con Alta Calificación = (Número de Restaurantes con Rating >= Umbral) / Total de Restaurantes x 100
 
-### Diferencia Promedio de Rating por Estado
-Identificar si la calidad de los restaurantes varía significativamente de un estado a otro.
-Diferencia Promedio de Rating por Estado = Promedio de "Rating" agrupado por "Estado".
+### Top 5 Franquicias por Conglomerado de Estados
+Identificar las mejores franquicias por conglomerado de estados
 
 ## Metodologia propuesta 📅
 
@@ -75,7 +74,7 @@ En este proyecto, estamos empleando la metodología ágil mediante el marco de t
 Para llevar a cabo nuestro proyecto hemos seleccionado las siguientes tecnologías:
 
 - Trabajo diario: Python, Google Meet, [GitHub](https://github.com).
-- Ingeniería de datos: Python, MySQL, Docker, [Apache Airflow](https://airflow.apache.org).
+- Ingeniería de datos: Python, Azure, MySQL.
 - Análisis y visualización de datos: [Power BI](https://powerbi.microsoft.com), Python.
 - Modelo de machine learning: Python.
 - Gestión de proyectos: [Trello](https://trello.com).
