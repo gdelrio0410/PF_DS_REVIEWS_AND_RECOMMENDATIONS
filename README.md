@@ -47,21 +47,28 @@ Se realizó un análisis preliminar y transformaciones de los conjuntos de datos
 
 ## KPI 📈
 
-### Tasa de Satisfacción del Cliente
-Este KPI mide el porcentaje de clientes satisfechos en función de las reseñas y opiniones recopiladas en plataformas como Yelp y Google Maps.
-Tasa de Satisfacción del Cliente = (Número de Reseñas Positivas / Total de Reseñas) x 100
-Considerando las Reseñas Positivas las de valor mayor a 4 estrellas.
+### Tasa de Satisfacción del Cliente:
+- Definición: Este KPI mide el porcentaje de clientes satisfechos en función de las reseñas y opiniones recopiladas en plataformas como Yelp y Google.
+- Fórmula: Tasa de Satisfacción del Cliente = (Número de Reseñas Positivas (valoración >= 4 estrellas) / Total de Reseñas) x 100
+- Objetivo: Evaluar la satisfacción general de los clientes con las franquicias de restaurantes en cada categoría de estados.
 
-### Cantidad de Sucursales por Conglomerado de Estados
-Permite identificar cuantas sucursales tendremos por conglomerado de estados.
+### Cantidad de Sucursales por Conglomerado de Estados:
+- Definición: Este KPI permite identificar cuántas sucursales tendrás por conglomerado de estados.
+- Objetivo: Determinar la expansión y presencia de las franquicias en cada categoría de estados, lo que puedeindicar oportunidades de crecimiento o saturación delmercado.
 
+### Porcentaje de Restaurantes con Alta Calificación:
+- Definición: Este KPI muestra el porcentaje de restaurantes que tienen una calificación por encima de un umbralespecífico (por ejemplo, 4 estrellas).
+- Fórmula: Porcentaje de Restaurantes con Alta Calificación = (Número de Restaurantes con Rating >= Umbral) / Total de Restaurantes x 100
+- Objetivo: Evaluar la calidad general de las franquicias en cada categoría de estados y destacar las que tienen una alta calificación.
 
-### Porcentaje de Restaurantes con Alta Calificación
-Este KPI muestra el porcentaje de restaurantes que tienen una calificación por encima de un umbral específico (por ejemplo, 4 estrellas).
-Porcentaje de Restaurantes con Alta Calificación = (Número de Restaurantes con Rating >= Umbral) / Total de Restaurantes x 100
+### Top 5 Franquicias por Conglomerado de Estados:
+- Definición: Este KPI identifica las mejores franquicias por conglomerado de estados.
+- Objetivo: Identificar las franquicias más exitosas en términos de presencia y calificación en cada categoríade estados, lo que puede servir como referencia para futuras inversiones.
 
-### Top 5 Franquicias por Conglomerado de Estados
-Identificar las mejores franquicias por conglomerado de estados
+### Tasa de Penetración de Mercado por Estado:
+- Definición: Este KPI mide la cuota de mercado que tienen las franquicias en cada uno de los tres tipos de estados:densamente poblados, de población intermedia y de menor población. Indica la proporción de restaurantes de franquicias con respecto al total de restaurantes en cada estado.
+- Objetivo: Identificar dónde las franquicias tienen una presencia más sólida y evaluar su participación en el mercadoen función de la densidad de población.
+- Fórmula: Tasa de Penetración de Mercado por Estado = (Número de Restaurantes de Franquicias / Total de Restaurantes) x 100.
 
 ## Metodologia propuesta 📅
 
