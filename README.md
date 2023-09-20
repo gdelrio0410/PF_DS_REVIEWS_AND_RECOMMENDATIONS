@@ -31,11 +31,10 @@ Para llevar a cabo este proyecto, el cliente ha contratado a Icon Data Science C
 ## 3. Alcance y fuera de alcance 🚧
 
 ### Alcance
-- Recopilación, limpieza y análisis de datos de restaurantes, tipos de restaurantes, franquicias, ubicaciones, población y reseñas.
-- Análisis exploratorio de datos para identificar patrones y tendencias.
-- Correlación entre datos de tipos de locales gastronómicos, franquicias y reseñas.
-- Implementación de métricas e indicadores para evaluar aspectos relacionados con ofertas gastronómicas y franquicias, y su relación con clientes y reseñas.
-- Incorporación de datasets adicionales con información relevante y confiable.
+Recopilación, limpieza y análisis de datos de restaurantes, su tip, frnaquicias, ubicaciones, poblasion y reseñas estratificando en 3 grupos de estados su densidad poblacional
+- Alta
+- Media
+- Baja
 
 ### Fuera de Alcance
 - Implementación práctica de la construcción, diseño y operación de restaurantes o franquicias.
