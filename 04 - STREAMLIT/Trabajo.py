@@ -8,8 +8,31 @@ import seaborn as sns
 
 data_comple=pd.read_csv("Union.csv")
 data_comple=data_comple[["Estado","latitude","longitude","category","name"]]
+Population=pd.read_csv("Population_limpio.csv")
+Population=Population[["State","Total population","Categoría de densidad"]]
+Rewiews=pd.read_csv("yast.csv")
+Rewiews=Rewiews[["name","text","date"]]
+puntuacion=pd.read_csv("Puntuacion.csv")
+puntuacion=puntuacion[["name","Promedio"]]
 
 data_comple.dropna(subset=["category"], inplace=True)
+
+st.markdown("***")
+
+st.markdown("# 	:zap: Densidad poblacional :zap:")
+st.markdown("***")
+
+lista=Population["Categoría de densidad"].unique()
+select=st.selectbox("Seleccione Estado: ",lista)
+
+
+
+Popu =Population[Population["Categoría de densidad"]== select]
+
+
+
+st.dataframe(Popu)
+
 
 st.markdown("***")
 
@@ -17,7 +40,7 @@ st.markdown("# 	:zap: Restaurant Sectorizado  :zap:")
 st.markdown("***")
 
 
-lista=data_comple["Estado"].unique()
+lista=Popu["State"].unique()
 select=st.selectbox("Seleccione Estado: ",lista)
 
 
@@ -85,7 +108,7 @@ st.markdown("# 	:zap: Franquicias del sector   :zap:")
 st.markdown("***")
 
 
-Franquicias=pd.DataFrame(df['name'].value_counts().head(10).reset_index())
+Franquicias=pd.DataFrame(df['name'].value_counts().head(5).reset_index())
 
 
 
@@ -95,3 +118,25 @@ sns.barplot(y='name', x='count', data=Franquicias)
 st.pyplot()
 
 
+    
+st.markdown("***")
+
+st.markdown("# 	:zap: Rewiews de la Franquicia   :zap:")
+st.markdown("***")
+
+lista=Franquicias["name"].unique()
+select=st.selectbox("Seleccione una Franquicia: ",lista)
+
+Puntu=puntuacion[puntuacion['name'] == select]
+
+rewiew=Rewiews[Rewiews['name'] == select]
+
+rewiew.sort_values('date', ascending=False, inplace=True)
+rewiew.reset_index(drop=True, inplace=True)
+
+
+result=rewiew[["text","date"]]
+result=result.head(5)
+
+st.dataframe(Puntu)
+st.dataframe(result)
