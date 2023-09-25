@@ -15,3 +15,6 @@ test.ipynb
 01 - ETL/03 - Poblacion/Data/DataSet Population EEUU.csv
 01 - ETL/05 - Yat/data/checkin.json
 01 - ETL/05 - Yat/data/business.pkl
+01 - ETL/05 - Yat/data/rew_modi.csv
+01 - ETL/05 - Yat/data/user-002.parquet
+01 - ETL/05 - Yat/data/tip.json
