@@ -18,3 +18,4 @@ test.ipynb
 01 - ETL/05 - Yat/data/rew_modi.csv
 01 - ETL/05 - Yat/data/user-002.parquet
 01 - ETL/05 - Yat/data/tip.json
+*.csv
