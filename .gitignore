@@ -1,21 +1,2 @@
 
-00 -DATASET/
-trt/
-Sitios_Unidos.csv
-Union.csv
-Estados.csv
-env
-test.ipynb
-
-01 - ETL/01 - Data_tratados/Datos_Procesados.csv
-01 - ETL/01 - Data_tratados/Population_limpio.csv
-01 - ETL/01 - Data_tratados/yast.csv
-01 - ETL/01 - Data_tratados/Puntuacion.csv
-01 - ETL/05 - Yat/data/rewiews2.csv
-01 - ETL/03 - Poblacion/Data/DataSet Population EEUU.csv
-01 - ETL/05 - Yat/data/checkin.json
-01 - ETL/05 - Yat/data/business.pkl
-01 - ETL/05 - Yat/data/rew_modi.csv
-01 - ETL/05 - Yat/data/user-002.parquet
-01 - ETL/05 - Yat/data/tip.json
 *.csv
