@@ -1,0 +1,52 @@
+Id_Estado,Nombre_Estado,Total_Poblacion,Categoria_Densidad
+1,Alabama,5039877,Mediana
+2,Alaska,732673,Baja
+3,Arizona,7276316,Alta
+4,Arkansas,3025891,Mediana
+5,California,39237836,Alta
+6,Colorado,5812069,Mediana
+7,Connecticut,3605597,Mediana
+8,Delaware,1003384,Baja
+9,District of Columbia,670050,Baja
+10,Florida,21781128,Alta
+11,Georgia,10799566,Alta
+12,Hawaii,1441553,Baja
+13,Idaho,1900923,Baja
+14,Illinois,12671469,Alta
+15,Indiana,6805985,Mediana
+16,Iowa,3193079,Mediana
+17,Kansas,2934582,Mediana
+18,Kentucky,4509394,Mediana
+19,Louisiana,4624047,Mediana
+20,Maine,1372247,Baja
+21,Maryland,6165129,Mediana
+22,Massachusetts,6984723,Alta
+23,Michigan,10050811,Alta
+24,Minnesota,5707390,Mediana
+25,Mississippi,2949965,Mediana
+26,Missouri,6168187,Mediana
+27,Montana,1104271,Baja
+28,Nebraska,1963692,Baja
+29,Nevada,3143991,Mediana
+30,New Hampshire,1388992,Baja
+31,New Jersey,9267130,Alta
+32,New Mexico,2115877,Baja
+33,New York,19835913,Alta
+34,North Carolina,10551162,Alta
+35,North Dakota,774948,Baja
+36,Ohio,11780017,Alta
+37,Oklahoma,3986639,Mediana
+38,Oregon,4246155,Mediana
+39,Pennsylvania,12964056,Alta
+40,Rhode Island,1095610,Baja
+41,South Carolina,5190705,Mediana
+42,South Dakota,895376,Baja
+43,Tennessee,6975218,Alta
+44,Texas,29527941,Alta
+45,Utah,3337975,Mediana
+46,Vermont,645570,Baja
+47,Virginia,8642274,Alta
+48,Washington,7738692,Alta
+49,West Virginia,1782959,Baja
+50,Wisconsin,5895908,Mediana
+51,Wyoming,578803,Baja
