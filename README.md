@@ -5,8 +5,9 @@
 - Víctor Vargas ➡️ Data Engineer
 - Michael Martínez ➡️ Data Engineer
 - Guillermo del Río ➡️ Data Science
-- Julián Scarpeccio ➡️ Data Science
-- Benjamín Zelaya ➡️ Data Analyst
+- Benjamín Zelaya ➡️ Data Science
+- Julián Scarpeccio ➡️ Data Analyst
+
 
 ## Entendimiento de la situación propuesta 🤔
 
@@ -24,32 +25,20 @@ Para llevar a cabo este proyecto, el cliente ha contratado a Icon Data Science C
 - Crear un dashboard interactivo y visualmente atractivo que integre los resultados del análisis exploratorio de datos.
 - Entrenar y poner en producción un modelo de machine learning para proponer una oportunidad de inversión en el sector.
 
-### Objetivos del Grupo:
-- Investigar y analizar los conjuntos de datos de locales gastronómicos y sus franquicias en cada uno de los conglomerados para identificar tendencias.
-- Entender la correlación entre los tipos de locales gastronómicos, franquicias y reviews con el fin de proporcionar una base sólida para las decisiones futuras relacionadas con la oportunidad de inversión.
-
-## 3. Alcance y fuera de alcance 🚧
+## Alcance 🚧
 
 ### Alcance
-Recopilación, limpieza y análisis de datos de restaurantes, su tip, frnaquicias, ubicaciones, poblasion y reseñas estratificando en 3 grupos de estados su densidad poblacional
+Recopilación, limpieza y análisis de datos de restaurantes, su tip, frnaquicias, ubicaciones, poblacion y reseñas estratificando en 3 grupos de estados su densidad poblacional
 - Alta
 - Media
 - Baja
 
-### Fuera de Alcance
-- Implementación práctica de la construcción, diseño y operación de restaurantes o franquicias.
-- Análisis detallado de aspectos económicos, logísticos y regulatorios.
-
-## 4. Análisis preliminar de Calidad del dato 📊
-
-Se realizó un análisis preliminar y transformaciones de los conjuntos de datos dados por la empresa y obtenidos externamente para así observar la calidad de los datos, concatenar archivos, limpiar valores nulos, observar tipos de datos y realizar gráficos que nos ayuden a comprender la información. Podemos observar los archivos dentro de la carpeta sprint_1 llamado ETL y EDA.
-
 ## KPI 📈
 
 ### Tasa de Satisfacción del Cliente:
-- Definición: Este KPI mide el porcentaje de clientes satisfechos en función de las reseñas y opiniones recopiladas en plataformas como Yelp y Google.
-- Fórmula: Tasa de Satisfacción del Cliente = (Número de Reseñas Positivas (valoración >= 4 estrellas) / Total de Reseñas) x 100
-- Objetivo: Evaluar la satisfacción general de los clientes con las franquicias de restaurantes en cada categoría de estados.
+- Descripción: Este KPI mide el porcentaje de clientes satisfechos en función del rating de opiniones recopiladas en plataformas como Yelp y Google Maps. 
+- Calificación: por encima de un umbral específico de puntuación de Rating >= 4 .
+- Fórmula: Tasa de Satisfacción del Cliente = (Número de Rating/ Total de Rating) x 100
 
 ### Cantidad de Sucursales por Conglomerado de Estados:
 - Definición: Este KPI permite identificar cuántas sucursales tendrás por conglomerado de estados.
@@ -64,28 +53,12 @@ Se realizó un análisis preliminar y transformaciones de los conjuntos de datos
 - Definición: Este KPI identifica las mejores franquicias por conglomerado de estados.
 - Objetivo: Identificar las franquicias más exitosas en términos de presencia y calificación en cada categoríade estados, lo que puede servir como referencia para futuras inversiones.
 
-### Tasa de Penetración de Mercado por Estado:
-- Definición: Este KPI mide la cuota de mercado que tienen las franquicias en cada uno de los tres tipos de estados:densamente poblados, de población intermedia y de menor población. Indica la proporción de restaurantes de franquicias con respecto al total de restaurantes en cada estado.
-- Objetivo: Identificar dónde las franquicias tienen una presencia más sólida y evaluar su participación en el mercadoen función de la densidad de población.
-- Fórmula: Tasa de Penetración de Mercado por Estado = (Número de Restaurantes de Franquicias / Total de Restaurantes) x 100.
+###  Comparación de Satisfacción del Cliente Promedio por Estado con el Nivel de Satisfacción de la Franquicia Elegida:
+- Descripción: Este indicador se establece con el propósito de evaluar el nivel de satisfacción del cliente en la franquicia elegida por el inversor y compararlo con la satisfacción promedio de los clientes dentro del estado en el que se realizó la inversión. 
+Si el nivel Promedio de satisfacción de nuestra Franquicia está por encima del promedio del estado significa que estamos por encima de la media y que mantenemos la calidad y servicio a nuestros clientes, lo cual nos indica un buen desempeño.
 
-## Metodologia propuesta 📅
-
-![Metodología Scrum](./Images/metodología-scrum.png)
-
-En este proyecto, estamos empleando la metodología ágil mediante el marco de trabajo Scrum utilizando el software de administración de proyectos Trello. Esto conlleva la incorporación de los valores y conceptos ágiles en nuestro enfoque de desarrollo. Estamos aplicando la estructura definida por Scrum en términos de roles, eventos, artefactos y reglas para la organización y gestión efectiva del trabajo colaborativo.
-
-## **Stack tecnológico** 💻
-
-Para llevar a cabo nuestro proyecto hemos seleccionado las siguientes tecnologías:
-
-- Trabajo diario: Python, Google Meet, [GitHub](https://github.com).
-- Ingeniería de datos: Python, Azure, MySQL.
-- Análisis y visualización de datos: [Power BI](https://powerbi.microsoft.com), Python.
-- Modelo de machine learning: Python.
-- Gestión de proyectos: [Trello](https://trello.com).
-
-
+### Comparación del Nivel de Satisfacción del Cliente en Franquicias Seleccionadas frente al Promedio Nacional.
+- Descripción: Este indicador de desempeño tiene como objetivo evaluar la satisfacción de los clientes en la franquicia que se ha seleccionado por el inversor, y contrastar con la satisfacción promedio de los usuarios en dicha franquicia a nivel nacional.
 
 ## Data Pipeline 🚀 
 
@@ -109,8 +82,6 @@ Creada la SQL Database de Azure se realizará la conexión con Databricks por me
 ### 📈 Conexión con Power BI
 La conexión se realiza mediante el conector de Azure SQL Database de Power BI. Se ingresan las credenciales del servidor de base de datos y se cargan los datos ya sea por Direct Query o Import Data.
 
-### Documentacion
-[Documentacion](https://drive.google.com/file/d/1HaEYlB13XfoRl2LpiypKTITiFe3X6-hF/view?usp=sharing).
 
 
 
