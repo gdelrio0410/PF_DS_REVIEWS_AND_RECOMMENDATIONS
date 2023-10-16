@@ -82,6 +82,13 @@ Creada la SQL Database de Azure se realizará la conexión con Databricks por me
 ### 📈 Conexión con Power BI
 La conexión se realiza mediante el conector de Azure SQL Database de Power BI. Se ingresan las credenciales del servidor de base de datos y se cargan los datos ya sea por Direct Query o Import Data.
 
+## Documentación de los Sprints
+
+- [Documentación del Sprint 1](https://github.com/gdelrio0410/PF_DS_REVIEWS_AND_RECOMMENDATIONS/blob/11fa2d842c55cc39003a3b8ced99d5d94c5a2e75/sprint_1/Documentacion_sprint_1.pdf): Aquí encontrarás información detallada sobre el trabajo realizado en el primer sprint, incluyendo objetivos, tareas completadas y resultados obtenidos.
+
+- [Documentación del Sprint 2](https://github.com/gdelrio0410/PF_DS_REVIEWS_AND_RECOMMENDATIONS/blob/477bd10e83a49c89c5c118645e909ac753378ff4/sprint_2/Documentacion%20Sprint%202.pdf): En este enlace, puedes acceder a la documentación del segundo sprint, que incluye detalles sobre las metas alcanzadas, las tareas realizadas y cualquier información relevante relacionada con el proyecto.
+
+Te invitamos a explorar estos documentos para obtener una visión más completa del progreso y los logros de nuestro proyecto de inversión gastronómica en el mercado de Estados Unidos.
 
 
 
