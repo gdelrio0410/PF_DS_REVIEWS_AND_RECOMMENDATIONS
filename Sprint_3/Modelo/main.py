@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
+import seaborn as sns
 import matplotlib.pyplot as plt
 import plotly.express as px
 from sklearn.preprocessing import LabelEncoder
@@ -8,6 +9,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.metrics import accuracy_score
 import folium
+from streamlit_folium import folium_static
 from folium.plugins import MarkerCluster
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.model_selection import cross_val_score, train_test_split
@@ -19,17 +21,9 @@ from geopy.distance import great_circle
 
 
 
+
 # Cargar los tres DataFrames
-df_reviews_completo = pd.read_csv('/Users/benjaminzelaya/Desktop/PGF/PG/PF_DS_REVIEWS_AND_RECOMMENDATIONS/sprint_2/datasets_limpios/Reviews_Completo.csv')
-df_franquicias_inversion = pd.read_csv('/Users/benjaminzelaya/Desktop/PGF/PG/PF_DS_REVIEWS_AND_RECOMMENDATIONS/sprint_2/datasets_limpios/Franquicias_Inversion.csv')
-df_estados = pd.read_csv('/Users/benjaminzelaya/Desktop/PGF/PG/PF_DS_REVIEWS_AND_RECOMMENDATIONS/sprint_2/datasets_limpios/Estados.csv')
-df_ML = pd.read_csv('/Users/benjaminzelaya/Desktop/PGF/PG/PF_DS_REVIEWS_AND_RECOMMENDATIONS/Sprint_3/Modelo/df_ML.csv')
-
-
-    # Unir los DataFrames
-merged_df = df_reviews_completo.merge(df_franquicias_inversion, on='Id_Franquicia', how='inner')
-final_df = merged_df.merge(df_estados, on='Id_Estado', how='inner')
-
+df_ML = pd.read_csv('/Users/benjaminzelaya/Desktop/PF_DS_REVIEWS_AND_RECOMMENDATIONS/Sprint_3/Modelo/df_ML.csv')
 
 
 
@@ -138,15 +132,11 @@ fig.update_layout(
 # Mostrar el gráfico en Streamlit
 st.plotly_chart(fig)
 
-# Gráfico de pastel interactivo
+
+# Gráfico de área
 st.subheader("Distribución de Categorías")
-fig, ax = plt.subplots()
-ax.pie(categorias_mas_sucursales, labels=categorias_mas_sucursales.index.tolist(), autopct='%1.1f%%', startangle=90)
-ax.axis('equal')  #
-
-# Mostrar el gráfico en Streamlit
-st.pyplot(fig)
-
+fig = px.area(categorias_mas_sucursales, x=categorias_mas_sucursales.index, y=0, title="Distribución de Categorías")
+st.plotly_chart(fig)
 # Agregar separador visual
 st.markdown('<hr style="border: 2px solid #e74c3c;">', unsafe_allow_html=True)
 
@@ -175,9 +165,13 @@ if st.sidebar.button('Obtener Recomendaciones', key='obtener_recomendaciones_but
     # Ordenar franquicias por promedio de rating descendente y eliminar duplicados en "Nombre_Franquicia"
     franquicias_recomendadas = franquicias_filtradas.drop_duplicates(subset=['Nombre_Franquicia']).nlargest(10, 'Promedio_Rating')
 
-    # Mostrar franquicias recomendadas con información adicional
-    st.dataframe(franquicias_recomendadas[['Nombre_Franquicia', 'Promedio_Rating']])
+    # Crear un gráfico de barras interactivas con Plotly
+    fig = px.bar(franquicias_recomendadas, x='Promedio_Rating', y='Nombre_Franquicia', orientation='h',
+                 labels={'Nombre_Franquicia': 'Nombre de Franquicia'},
+                 title='Franquicias Recomendadas')
 
+    # Mostrar el gráfico en Streamlit
+    st.plotly_chart(fig)
 
 
 # Agregar separador visual
@@ -186,47 +180,63 @@ st.markdown('<hr style="border: 2px solid #e74c3c;">', unsafe_allow_html=True)
 ##################################
 
 # Seccion 3
-# Título de la aplicación con formato
-st.header("Franquicias por Rango de Inversión seleccionado")
+def main(df_ML):
+    st.header("Franquicias por Rango de Inversión seleccionado")
+    st.sidebar.title('Franquicias Recomendadas por Rango de Inversión:')
 
-# Barra lateral personalizada
-st.sidebar.title('Franquicias Recomendadas por Rango de Inversión:')
-# Crear una función para realizar recomendaciones
-def main():
     # Entrada para el presupuesto mínimo y máximo
     budget_min = st.sidebar.number_input('Presupuesto Mínimo', min_value=0, max_value=99000000000, value=0)
     budget_max = st.sidebar.number_input('Presupuesto Máximo', min_value=0, max_value=99000000000, value=99000000000)
 
+    # Configurable: Número de franquicias a mostrar
+    num_franquicias_mostrar = st.sidebar.number_input('Número de Franquicias a Mostrar', min_value=1, value=5)
+
     # Botón para realizar recomendaciones
     if st.sidebar.button('Obtener Recomendaciones'):
-        # Convierte los valores de 'Año_Fundado' a cadenas de texto, luego elimina comas y convierte a tipo int
-        df_franquicias_inversion['Año_Fundado'] = pd.to_numeric(df_franquicias_inversion['Año_Fundado'].astype(str).str.replace(',', '', regex=True), errors='coerce')
+        try:
+            # Realiza una copia explícita del DataFrame para evitar el SettingWithCopyWarning
+            df_ML = df_ML.copy()
 
-        # Filtrar franquicias por rango de inversión
-        franquicias_filtradas = df_franquicias_inversion[
-            (df_franquicias_inversion['Min_Inversion'] >= budget_min) &
-            (df_franquicias_inversion['Max_Inversion'] <= budget_max)
-        ]
+            # Convierte los valores de 'Año_Fundado' a cadenas de texto, luego elimina comas y convierte a tipo int
+            df_ML['Año_Fundado'] = pd.to_numeric(df_ML['Año_Fundado'].astype(str).str.replace(',', '', regex=True), errors='coerce')
 
-        # Calcular el porcentaje de inversión para cada franquicia, redondear a 2 decimales y agregar el símbolo '%'
-        franquicias_filtradas['Ratio_Inversion'] = (franquicias_filtradas['Min_Inversion'] / franquicias_filtradas['Max_Inversion']) * 100
-        franquicias_filtradas['Ratio_Inversion'] = franquicias_filtradas['Ratio_Inversion'].round(2).astype(str) + '%'
+            # Filtrar franquicias por rango de inversión
+            franquicias_filtradas = df_ML[
+                (df_ML['Min_Inversion'] >= budget_min) &
+                (df_ML['Max_Inversion'] <= budget_max)
+            ]
 
-        # Ordenar franquicias filtradas primero por 'Unidades' (de mayor a menor) y luego por 'Min_Inversion' (de menor a mayor)
-        franquicias_filtradas = franquicias_filtradas.sort_values(by=['Unidades', 'Min_Inversion'], ascending=[False, True])
+            if franquicias_filtradas.empty:
+                st.warning('No hay franquicias disponibles en el rango de inversión seleccionado.')
+            else:
+                # Calcular el porcentaje de inversión para cada franquicia
+                franquicias_filtradas['Ratio_Inversion'] = (franquicias_filtradas['Min_Inversion'] / franquicias_filtradas['Max_Inversion']) * 100
+                franquicias_filtradas['Ratio_Inversion'] = franquicias_filtradas['Ratio_Inversion'].round(2)
 
-        # Limitar la salida a las 10 primeras franquicias y eliminar la columna 'Id_Franquicia'
-        franquicias_top_10 = franquicias_filtradas.head(10).drop(columns=['Id_Franquicia'])
+                # Ordenar franquicias filtradas primero por 'Unidades' (de mayor a menor) y luego por 'Min_Inversion' (de menor a mayor)
+                franquicias_filtradas = franquicias_filtradas.sort_values(by=['Unidades', 'Min_Inversion'], ascending=[False, True])
 
-        # Mostrar recomendaciones en el cuerpo principal
-        st.write(franquicias_top_10)
+                # Eliminar duplicados y mostrar solo las filas únicas
+                franquicias_unicas = franquicias_filtradas.drop_duplicates(subset=['Nombre_Franquicia'])
 
-        # Agregar la descripción del ratio de inversión en un tamaño más pequeño
+                # Crear un gráfico de burbujas para visualizar el rango de inversión y el ratio de inversión de cada franquicia
+                fig = px.scatter(franquicias_unicas.head(num_franquicias_mostrar), x='Min_Inversion', y='Max_Inversion', size='Ratio_Inversion', text='Nombre_Franquicia',
+                                labels={'Min_Inversion': 'Inversión Mínima', 'Max_Inversion': 'Inversión Máxima', 'Ratio_Inversion': 'Ratio de Inversión'})
+
+                # Mostrar el gráfico de burbujas en el dashboard
+                st.write("A continuación, se muestra un gráfico de burbujas que representa el rango de inversión y el ratio de inversión de las franquicias:")
+                st.plotly_chart(fig)
+
+        except Exception as e:
+            st.error(f"Ocurrió un error: {str(e)}")
+
+         # Agregar la descripción del ratio de inversión en un tamaño más pequeño
         st.markdown("<sub><sup> *El ratio de inversión proporciona información clave sobre cómo se distribuyen los recursos financieros en relación con un rango de inversión disponible. Su uso puede ayudar en la toma de decisiones, la planificación financiera y la optimización de recursos, lo que es fundamental para lograr objetivos financieros y maximizar el rendimiento de las inversiones.</sup></sub>", unsafe_allow_html=True)
         st.markdown("<sub><sup> *Si el ratio de inversión indica que la inversión mínima representa una pequeña fracción de la inversión máxima, esto podría sugerir la oportunidad de diversificar aún más la cartera de inversiones.</sup></sub>", unsafe_allow_html=True)
-if __name__ == '__main__':
-    main()
 
+if __name__ == '__main__':
+    # Llama a la función main pasando el DataFrame como argumento
+    main(df_ML)
 
 # Agregar separador visual
 st.markdown('<hr style="border: 2px solid #e74c3c;">', unsafe_allow_html=True)
@@ -235,6 +245,8 @@ st.markdown('<hr style="border: 2px solid #e74c3c;">', unsafe_allow_html=True)
 ############################################
 # seccion 4
 st.header('Sucursales con mejor rating de la Franquicia Seleccionada')
+
+df_ML['Caracteristicas'] = df_ML['Nombre_Estado'] + ' ' + df_ML['Categoria']
 
 # Construir una matriz de características TF-IDF a partir de la columna 'Caracteristicas'
 tfidf_vectorizer = TfidfVectorizer(stop_words='english')
@@ -270,90 +282,77 @@ def get_recommendations(nombre_franquicia, cosine_sim=cosine_sim):
 def main():
     st.sidebar.title('Selecciona una Franquicia para conocer las sucursales con mejor rating')
 
-    # Obtener la lista de opciones de franquicias desde la columna 'Nombre_Franquicia' de tu DataFrame
-    opciones_franquicias = df_ML['Nombre_Franquicia'].unique()
+    # Filtra las franquicias que tienen al menos un número mínimo de sucursales
+    min_sucursales = 1  # Define el número mínimo de sucursales requerido
+    franquicias_con_suficientes_sucursales = df_ML['Nombre_Franquicia'].value_counts()[df_ML['Nombre_Franquicia'].value_counts() >= min_sucursales].index.tolist()
 
-    # Usar un selectbox en la barra lateral para seleccionar una franquicia
-    nombre_franquicia_ejemplo = st.sidebar.selectbox('Seleccione una franquicia:', opciones_franquicias)
+    if franquicias_con_suficientes_sucursales:
+                # Crea un selectbox solo con las franquicias que cumplen con el criterio
+                nombre_franquicia_ejemplo = st.sidebar.selectbox('Seleccione una franquicia:', franquicias_con_suficientes_sucursales)
 
-    # Inicializar recomendaciones
-    recomendaciones = None
+                # Obtener la lista de opciones de franquicias desde la columna 'Nombre_Franquicia' de tu DataFrame
+                opciones_franquicias = df_ML['Nombre_Franquicia'].unique()
 
-    # Botón principal para obtener recomendaciones
+                # Inicializar recomendaciones
+                recomendaciones = None
+
+
+            # Botón principal para obtener recomendaciones
     if st.sidebar.button('Obtener Recomendaciones', key='obtener_recomendaciones_button_sidebar'):
-        recomendaciones = get_recommendations(nombre_franquicia_ejemplo)
+                recomendaciones = get_recommendations(nombre_franquicia_ejemplo)
 
     if recomendaciones is not None:
-        if isinstance(recomendaciones, pd.DataFrame):
-            st.write('Sucursales:')
-        
+                if isinstance(recomendaciones, pd.DataFrame):
+
+                    map = folium.Map(location=[recomendaciones.iloc[0]['Latitud'], recomendaciones.iloc[0]['Longitud']], zoom_start=10)
+
+                    for _, row in recomendaciones.iterrows():
+                        popup_content = f"Nombre Franquicia: {row['Nombre_Franquicia']}<br>Nombre Estado: {row['Nombre_Estado']}<br>Promedio Rating: {row['Promedio_Rating']}<br>Latitud: {row['Latitud']}<br>Longitud: {row['Longitud']}"
+                        if row['Promedio_Rating'] == recomendaciones['Promedio_Rating'].max():
+                    # Usar un color rojo para resaltar la mejor sucursal
+                            icon = folium.Icon(color='red')
+                        else:
+                            icon = None
+
+                        folium.Marker(
+                            location=[row['Latitud'], row['Longitud']],
+                            popup=folium.Popup(popup_content, max_width=300),  # Muestra información adicional en el popup
+                            icon=icon  # Establecer el icono personalizado para resaltar
+                        ).add_to(map)
+
+                    st.write('Mapa de Sucursales:')
+                    folium_static(map)
+
+
         # Resaltar la mejor opción
-        if not recomendaciones.empty:
+    if recomendaciones is not None and not recomendaciones.empty:
             best_option = recomendaciones.iloc[0]
-            st.write(f"La Sucursal con mejor promedio de rating de {best_option['Nombre_Franquicia']}, esta ubicada en el Estado de {best_option['Nombre_Estado']}.")
-            
-        st.dataframe(recomendaciones)
+            map = folium.Map(location=[recomendaciones.iloc[0]['Latitud'], recomendaciones.iloc[0]['Longitud']], zoom_start=10)
+
+            for _, row in recomendaciones.iterrows():
+                popup_content = f"Nombre Franquicia: {row['Nombre_Franquicia']}<br>Nombre Estado: {row['Nombre_Estado']}<br>Promedio Rating: {row['Promedio_Rating']}<br>Latitud: {row['Latitud']}<br>Longitud: {row['Longitud']}"
+                if row['Promedio_Rating'] == recomendaciones['Promedio_Rating'].max():
+            # Utiliza un color rojo para resaltar la mejor sucursal
+                    icon = folium.Icon(color='red')
+                else:
+                    icon = None
+
+                folium.Marker(
+                    location=[row['Latitud'], row['Longitud']],
+                    popup=folium.Popup(popup_content, max_width=300),  # Muestra información adicional en el cuadro emergente
+                    icon=icon  # Establece un icono personalizado para resaltar
+                ).add_to(map)
+
+            # Destaca la mejor opción
+            st.write(f"*La Sucursal indicada con color Rojo con el mejor promedio de rating de {best_option['Nombre_Franquicia']}, está ubicada en el Estado de {best_option['Nombre_Estado']}.")
+
     else:
-        st.write(recomendaciones)
+            st.write('No se encontraron recomendaciones para la franquicia seleccionada.')
+
+
 
 if __name__ == '__main__':
     main()
-
-# Agregar separador visual
-st.markdown('<hr style="border: 2px solid #e74c3c;">', unsafe_allow_html=True)
-
-#### seccion 5
-
-st.header('Franquicias y Sucursales dentro de un Radio especifico de 10Km')
-
-
-# Esta es tu función para filtrar franquicias cercanas
-def get_franquicias_cercanas(longitud, latitud, radio_km=10):
-    franquicias_cercanas = []
-
-    user_location = (latitud, longitud)
-
-    for index, row in df_ML.iterrows():
-        franquicia_location = (row['Latitud'], row['Longitud'])
-        distance = great_circle(user_location, franquicia_location).kilometers
-        if distance <= radio_km:
-            franquicias_cercanas.append({
-                'nombre_franquicia': row['Nombre_Franquicia'],
-                'Latitud': row['Latitud'],
-                'Longitud': row['Longitud'],
-                'Nombre_Estado': row['Nombre_Estado'],
-                'Promedio_Rating': row['Promedio_Rating'],
-                'Categoria': row['Categoria']
-            })
-
-    if franquicias_cercanas:
-        # Convertir a DataFrame y eliminar duplicados por latitud y longitud
-        franquicias_df = pd.DataFrame(franquicias_cercanas)
-        franquicias_df = franquicias_df.drop_duplicates(subset=['Latitud', 'Longitud'])
-        return franquicias_df
-    else:
-        return "No se encontraron franquicias cercanas."
-
-
-# Tu función principal de Streamlit
-def main():
-    st.sidebar.title('Buscar Franquicias y Sucursales Cercanas')
-
-    longitud = st.sidebar.number_input('Longitud:', value=0.0, min_value=-180.0, max_value=180.0, step=0.0001)
-    latitud = st.sidebar.number_input('Latitud:', value=0.0, min_value=-90.0, max_value=90.0, step=0.0001)
-
-    if st.sidebar.button('Buscar'):
-        franquicias_cercanas = get_franquicias_cercanas(longitud, latitud)
-        if isinstance(franquicias_cercanas, pd.DataFrame):
-            st.write('Franquicias y Sucursales Cercanas:')
-            st.dataframe(franquicias_cercanas)
-        else:
-            st.write(franquicias_cercanas)
-
-if __name__ == '__main__':
-    main()
-
-
 
 # Agregar separador visual
 st.markdown('<hr style="border: 2px solid #e74c3c;">', unsafe_allow_html=True)
