@@ -22,12 +22,10 @@ from geopy.distance import great_circle
 
 
 
-# Cargar los tres DataFrames
+# Cargar DataFrames
 df_ML = pd.read_csv('/Users/benjaminzelaya/Desktop/PF_DS_REVIEWS_AND_RECOMMENDATIONS/Sprint_3/Modelo/df_ML.csv')
 
-
-
-# Personalización del tema
+# Configuración personalizada de la página
 st.set_page_config(
     page_title="Recomendación de Franquicias para Inversión 🚀📊",
     page_icon="📈",
@@ -35,9 +33,9 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
-# Estilo de la aplicación
-st.markdown(
-    """<style>
+# Estilos personalizados con CSS
+st.markdown("""
+    <style>
     body {
         background-color: #F8F8F8;
         font-family: Arial, sans-serif;
@@ -63,29 +61,26 @@ st.markdown(
     h2 {
         font-size: 24px;
     }
-    </style>""",
-    unsafe_allow_html=True
+    </style>
+    """, unsafe_allow_html=True)
 
-)
-
-
-# Imagen o logo más pequeño
+# Logo o imagen pequeña
 st.image("/Users/benjaminzelaya/Desktop/PGF/PG/PF_DS_REVIEWS_AND_RECOMMENDATIONS/Images/ICOn COnsulting.png", 
-        width=200,
-        use_column_width=False, 
-        output_format='auto')  
+    width=200,
+    use_column_width=False, 
+    output_format='auto')
 
-
-st.header("Categoria segun niveles de densidad demografica y Estado seleccionado")
+# Sección 1: Categoría según Densidad Demográfica y Estado Seleccionado
+st.header("Categoría según Densidad Demográfica y Estado Seleccionado")
 
 # Barra lateral personalizada
 st.sidebar.title('Selecciona una Categoría de Densidad y un Estado:')
 categoria_deseada = st.sidebar.selectbox("Selecciona una Categoría de Densidad:", df_ML['Categoria_Densidad'].unique())
 
-# Filtrar el DataFrame para incluir solo las ubicaciones de la Categoría de Densidad seleccionada
+# Filtrar el DataFrame para incluir solo ubicaciones de la Categoría de Densidad seleccionada
 estados_categoria_densidad = df_ML[df_ML['Categoria_Densidad'] == categoria_deseada]
 
-# Obtener la lista de opciones de estados dentro de la categoría de densidad seleccionada
+# Obtener la lista de opciones de estados dentro de la Categoría de Densidad seleccionada
 opciones_estados = estados_categoria_densidad['Nombre_Estado'].unique()
 
 # Usar un segundo selectbox en la barra lateral para seleccionar un estado dentro de la Categoría de Densidad
@@ -97,9 +92,8 @@ st.markdown(f"Las categorías con más sucursales en **{estado_deseado_seccion2}
 # Filtrar franquicias por estado y categoría de densidad
 franquicias_en_estado_seccion1 = df_ML[(df_ML['Nombre_Estado'] == estado_deseado_seccion2) & (df_ML['Categoria_Densidad'] == categoria_deseada)]
 
-# Calcular las categorías con más sucursales 
+# Calcular las categorías con más sucursales
 categorias_mas_sucursales = franquicias_en_estado_seccion1.groupby('Categoria').size().sort_values(ascending=False).head(5)
-
 
 # Crear el gráfico de barras
 fig = px.bar(
@@ -132,17 +126,19 @@ fig.update_layout(
 # Mostrar el gráfico en Streamlit
 st.plotly_chart(fig)
 
-
 # Gráfico de área
 st.subheader("Distribución de Categorías")
 fig = px.area(categorias_mas_sucursales, x=categorias_mas_sucursales.index, y=0, title="Distribución de Categorías")
 st.plotly_chart(fig)
+
 # Agregar separador visual
 st.markdown('<hr style="border: 2px solid #e74c3c;">', unsafe_allow_html=True)
 
 
+
 #######################
 # Sección 2: Recomendación de Inversión en Franquicias
+
 st.header("Franquicias según categoría y rango de Promedio de Rating")
 
 # Barra lateral personalizada
@@ -184,9 +180,12 @@ def main(df_ML):
     st.header("Franquicias por Rango de Inversión seleccionado")
     st.sidebar.title('Franquicias Recomendadas por Rango de Inversión:')
 
-    # Entrada para el presupuesto mínimo y máximo
-    budget_min = st.sidebar.number_input('Presupuesto Mínimo', min_value=0, max_value=99000000000, value=0)
-    budget_max = st.sidebar.number_input('Presupuesto Máximo', min_value=0, max_value=99000000000, value=99000000000)
+    # Mover las entradas de presupuesto mínimo y máximo aquí
+    st.write("Presupuesto Mínimo")
+    budget_min = st.number_input('Presupuesto Mínimo', min_value=0, max_value=99000000000, value=0)
+    st.write("Presupuesto Máximo")
+    budget_max = st.number_input('Presupuesto Máximo', min_value=0, max_value=99000000000, value=99000000000)
+
 
     # Configurable: Número de franquicias a mostrar
     num_franquicias_mostrar = st.sidebar.number_input('Número de Franquicias a Mostrar', min_value=1, value=5)
@@ -198,7 +197,7 @@ def main(df_ML):
             df_ML = df_ML.copy()
 
             # Convierte los valores de 'Año_Fundado' a cadenas de texto, luego elimina comas y convierte a tipo int
-            df_ML['Año_Fundado'] = pd.to_numeric(df_ML['Año_Fundado'].astype(str).str.replace(',', '', regex=True), errors='coerce')
+            df_ML.loc[:, 'Año_Fundado'] = pd.to_numeric(df_ML['Año_Fundado'].astype(str).str.replace(',', '', regex=True), errors='coerce')
 
             # Filtrar franquicias por rango de inversión
             franquicias_filtradas = df_ML[
