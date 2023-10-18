@@ -29,7 +29,7 @@ def custom_tabs():
 
 
 # Cargar los tres DataFrames
-df_ML = pd.read_csv('/Users/benjaminzelaya/Desktop/PF_DS_REVIEWS_AND_RECOMMENDATIONS/Sprint_3/Modelo/df_ML.csv')
+df_ML = pd.read_csv('/Users/benjaminzelaya/Desktop/nuevo_directorio/Sprint_3/Modelo/df_ML.csv')
 
 # Personalización del tema
 st.set_page_config(
@@ -41,7 +41,7 @@ st.set_page_config(
 
 
 # Imagen o logo más pequeño
-st.image("/Users/benjaminzelaya/Desktop/PF_DS_REVIEWS_AND_RECOMMENDATIONS/Images/ICOn COnsulting.png", 
+st.image("/Users/benjaminzelaya/Desktop/nuevo_directorio/Images/ICOn COnsulting.png", 
         width=200,
         use_column_width=False, 
         output_format='auto')  
@@ -462,7 +462,7 @@ elif selected_tab == "Predicción de Promedio de Rating de Franquicia":
     st.markdown('<hr style="border: 2px solid #e74c3c;">', unsafe_allow_html=True)
 
 
-    st.image("/Users/benjaminzelaya/Desktop/PF_DS_REVIEWS_AND_RECOMMENDATIONS/Images/ICOn COnsulting.png", 
+    st.image("/Users/benjaminzelaya/Desktop/nuevo_directorio/Images/ICOn COnsulting.png", 
         caption="©Icon Data Science Consulting",
         width=200,
         use_column_width=False,
