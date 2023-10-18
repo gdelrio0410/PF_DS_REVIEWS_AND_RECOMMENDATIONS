@@ -146,7 +146,9 @@ Se utiliza Azure Data Factory como un orquestador de datos utilizando cada noteb
 ### 📈 Conexión con Power BI
 La conexión se realiza mediante el conector de Azure SQL Database de PowerBI. Se ingresan las credenciales del servidor de base de datos y se cargan los datos ya sea por Direct Query o Import Data.
 Una vez que los datos se encuentran en la base de datos, se pueden analizar y visualizar utilizando Power BI. Esto permite identificar tendencias, patrones y obtener información valiosa para la toma de decisiones informadas.
+
 Link de acceso al Dashboard de Power Bi: https://drive.google.com/file/d/155PmIm5dQmAJaOL_PkCwdmWfu-2qJgDG/view
+
 
 ### Modelo de machine learning y streamlit
 Se creó un modelo de Machine Learning en Python. Este modelo se implementa en una aplicación interactiva utilizando Streamlit, que permite a los usuarios utilizar el modelo y obtener recomendaciones en tiempo real.
