@@ -148,6 +148,7 @@ La conexión se realiza mediante el conector de Azure SQL Database de PowerBI. S
 Una vez que los datos se encuentran en la base de datos, se pueden analizar y visualizar utilizando Power BI. Esto permite identificar tendencias, patrones y obtener información valiosa para la toma de decisiones informadas.
 
 **Link de acceso al Dashboard de Power Bi:** https://drive.google.com/file/d/155PmIm5dQmAJaOL_PkCwdmWfu-2qJgDG/view
+O descargarlo de la carpeta Sprint_3
 
 ![Portada Dashboard Power Bi](Images/PowerBi.jpg)
 
