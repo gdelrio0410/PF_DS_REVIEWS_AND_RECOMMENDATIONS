@@ -149,7 +149,7 @@ Una vez que los datos se encuentran en la base de datos, se pueden analizar y vi
 
 **Link de acceso al Dashboard de Power Bi:** https://drive.google.com/file/d/155PmIm5dQmAJaOL_PkCwdmWfu-2qJgDG/view
 
-[O descargarlo de la carpeta Sprint_3](https://github.com/gdelrio0410/PF_DS_REVIEWS_AND_RECOMMENDATIONS/blob/main/Sprint_3/PF%20Power%20Bi%20v2.pbix)
+- [Tambien lo pueden encontrar dentro el repositorio haciendo clik aquí](https://github.com/gdelrio0410/PF_DS_REVIEWS_AND_RECOMMENDATIONS/blob/main/Sprint_3/PF%20Power%20Bi%20v2.pbix)
 
 
 ![Portada Dashboard Power Bi](Images/PowerBi.jpg)
