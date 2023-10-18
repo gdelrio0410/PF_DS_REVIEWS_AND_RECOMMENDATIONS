@@ -149,7 +149,7 @@ Una vez que los datos se encuentran en la base de datos, se pueden analizar y vi
 
 Link de acceso al Dashboard de Power Bi: https://drive.google.com/file/d/155PmIm5dQmAJaOL_PkCwdmWfu-2qJgDG/view
 
-![Portada Dashboard Power Bi](./Images/Imagen Power Bi.jpeg)
+![Portada Dashboard Power Bi](./Images/Imagen Power Bi.png)
 
 
 ### Modelo de machine learning y streamlit
