@@ -151,8 +151,42 @@ Una vez que los datos se encuentran en la base de datos, se pueden analizar y vi
 
 ![Portada Dashboard Power Bi](Images/PowerBi.jpg)
 
-### Modelo de machine learning y streamlit
-Se creó un modelo de Machine Learning en Python. Este modelo se implementa en una aplicación interactiva utilizando Streamlit, que permite a los usuarios utilizar el modelo y obtener recomendaciones en tiempo real.
+### 
+### Modelo de Machine Learning y Dashboard de Streamlit
+
+Este proyecto representa una impresionante combinación de un modelo de Machine Learning y un dinámico dashboard creado con Streamlit. El dashboard ofrece cinco pestañas personalizadas, cada una con su conjunto de funcionalidades distintivas:
+
+* Categoría según niveles de densidad demográfica y Estado seleccionado
+
+Permite a los usuarios seleccionar una categoría de densidad demográfica y un estado específico.
+Muestra un gráfico de barras interactivo que presenta la cantidad de sucursales de franquicias en función de la categoría.
+
+* Franquicias según categoría y rango de Promedio de Rating
+
+Permite a los usuarios seleccionar una categoría de franquicia y un rango de promedio de calificación.
+Muestra un gráfico interactivo de las franquicias recomendadas que cumplen con los criterios seleccionados.
+
+* Franquicias por Rango de Inversión seleccionado
+
+Los usuarios pueden definir un rango de inversión y el número de franquicias que desean ver.
+Presenta un gráfico de burbujas que representa el rango de inversión y el ratio de inversión de las franquicias.
+
+* Sucursales con mejor rating de la Franquicia Seleccionada
+
+Permite a los usuarios seleccionar una franquicia de una lista de franquicias que tienen al menos un número mínimo de sucursales.
+Muestra un mapa interactivo que resalta la sucursal de la franquicia seleccionada con el mejor promedio de calificación.
+
+* Predicción de Promedio de Rating de Franquicia
+
+Este proyecto se centra en la creación de un modelo de Machine Learning de regresión y su implementación en un atractivo dashboard interactivo construido con Streamlit. El modelo utiliza datos diversos, incluyendo inversiones, poblaciones, ubicaciones geográficas y más, para predecir el promedio de calificaciones de franquicias. El modelo de Machine Learning, basado en el algoritmo "Random Forest Regressor," ha sido ajustado y evaluado cuidadosamente, logrando métricas de alto rendimiento, como un alto coeficiente de determinación (R2), un error cuadrático medio raíz (RMSE) bajo y un error absoluto medio (MAE) reducido.
+
+La interfaz de usuario interactiva desarrollada en Streamlit permite a los usuarios ingresar sus propios valores para características relevantes, como inversión, población y ubicación, y obtener recomendaciones personalizadas en tiempo real. Además, hemos incluido la codificación numérica de nombres de estados y números de franquicias para facilitar el procesamiento de datos categóricos. Este proyecto combina la potencia del Machine Learning con la accesibilidad de una interfaz de usuario intuitiva y amigable, demostrando cómo la inteligencia artificial puede estar al alcance de una audiencia más amplia. 
+
+![Portada Dashboard](/Images/portadadash.png)
+
+
+- [Video Dashboard](https://drive.google.com/file/d/1Y0UlDbot1GrV2eoeL-SW43ow6F7bM3pp/view?usp=share_link): Aquí encontrarás el video del Dashboard de Icon Data Science Consulting.
+
 
 
 ## Documentación de los Sprints
