@@ -149,8 +149,7 @@ Una vez que los datos se encuentran en la base de datos, se pueden analizar y vi
 
 Link de acceso al Dashboard de Power Bi: https://drive.google.com/file/d/155PmIm5dQmAJaOL_PkCwdmWfu-2qJgDG/view
 
-![Portada Dashboard Power Bi](./Images/Imagen Power Bi.png)
-
+![Portada Dashboard Power Bi](Images/PowerBi.jpg)
 
 ### Modelo de machine learning y streamlit
 Se creó un modelo de Machine Learning en Python. Este modelo se implementa en una aplicación interactiva utilizando Streamlit, que permite a los usuarios utilizar el modelo y obtener recomendaciones en tiempo real.
