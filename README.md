@@ -187,8 +187,9 @@ La interfaz de usuario interactiva desarrollada en Streamlit permite a los usuar
 
 ![Portada Dashboard](/Images/portadadash.png)
 
+- [Deploy Modelo](https://mainpy-aozm6rjjaat4onrelcscss.streamlit.app/): Aquí encontrarás el modelo de machine learning y Dashboard del proyecto de Icon Data Science Consulting.
 
-- [Video Dashboard](https://drive.google.com/file/d/1Y0UlDbot1GrV2eoeL-SW43ow6F7bM3pp/view?usp=share_link): Aquí encontrarás el video del Dashboard de Icon Data Science Consulting.
+- [Video Dashboard](https://drive.google.com/file/d/1Y0UlDbot1GrV2eoeL-SW43ow6F7bM3pp/view?usp=share_link): Aquí encontrarás el video del Modelo y Dashboard de Icon Data Science Consulting.
 
 
 
